@@ -176,6 +176,34 @@ void mergeKLists(List *lists, int listCount, List *result) {
     delete[] heap;
 }
 
+void demoMergeTwo() {
+    constexpr int k = 4;
+    constexpr int n = 20;
+    List lists[k];
+    List result{};
+
+    operationName = "demo";
+    dataSize = n;
+
+    std::cout << "=== Demo: generation (k=" << k << ", n=" << n
+              << ") and merging of 2 lists ===\n";
+    generateLists(lists, k, n);
+    for (int index = 0; index < k; index++) {
+        std::cout << "List " << index << ": ";
+        printList(&lists[index]);
+    }
+
+    std::cout << "Merging list 0 and list 1:\n";
+    mergeKLists(lists, 2, &result);   //the first 2 lists of the array
+    printList(&result);
+
+    freeList(&result);
+    for (int index = 2; index < k; index++) {   //lists 0 and 1 were emptied by the merge
+        freeList(&lists[index]);
+    }
+    std::cout << "\n";
+}
+
 void demoMergeK() {
     constexpr int k = 4;
     constexpr int n = 20;
@@ -267,7 +295,8 @@ int main() {
     //seed random with time
     srand(static_cast<unsigned>(time(nullptr)));
 
-    profileMerge();
+    // profileMerge();
+    demoMergeTwo();
     demoMergeK();
 
     return 0;
