@@ -295,7 +295,7 @@ int main() {
     //seed random with time
     srand(static_cast<unsigned>(time(nullptr)));
 
-    // profileMerge();
+    profileMerge();
     demoMergeTwo();
     demoMergeK();
 
