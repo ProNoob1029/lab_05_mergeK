@@ -1,23 +1,8 @@
-/*
- * Assignment 4: Merge k ordered lists efficiently
- *
- * Approach:
- *  - The k sorted sequences and the output are singly linked lists.
- *  - Merging k lists: a min-heap holds the current head of every list
- *    (at most k elements). Repeatedly take the root (the global minimum),
- *    append it to the output, and replace it with the next node of the
- *    same list (or with the last heap element if that list is exhausted),
- *    then sift down. Each of the n elements costs one heapify = O(log k).
- *
- * Observations (charts "Merge k lists - varying n" and "Merge k lists - varying k"):
- *  - For fixed k, the number of operations grows linearly with n.
- *  - A larger k gives a larger slope, because every heapify costs ~log k.
- *    The curves for k=5, k=10 and k=100 stay close to each other, which
- *    matches the logarithmic dependence on k.
- *  - For fixed n=10000 and varying k, the curve grows logarithmically in k
- *    (it flattens out as k increases), not linearly.
- *
- * Asymptotic evaluation: O(n*log k)
+/**
+ *  Author: Morar Dragoș Bogdan
+ *  Group: 30424
+ *  Lab: 5
+ *  Subject: Merge K lists
  */
 
 #include <iostream>
