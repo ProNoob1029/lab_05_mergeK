@@ -3,6 +3,16 @@
  *  Group: 30424
  *  Lab: 5
  *  Subject: Merge K lists
+ *  Varying n:
+ *      All 3 tests turn out linear, because n is the linear
+ *      part of n log k, their only difference is their slope,
+ *      given by the log k constant. Higher k gives more
+ *      operations.
+ *  Varying k:
+ *      Varying k gives a curved graph reminiscent of log x,
+ *      which confirms that k is the log part of the complexity.
+ *      Increasing k high enough eventually adds a diminishing
+ *      amount of operations.
  */
 
 #include <iostream>
